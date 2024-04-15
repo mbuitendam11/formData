@@ -4,17 +4,21 @@
 
 
 {% block content %}
-<div class="row"> <!--Ingredients section-->
-    <div class="col col-md-2 mb-3">
-        <button id='addIngredient' class="btn btn-success">Add</button>
-        <button id='removeIngredient' class="btn btn-danger">Remove</button>
-    </div>
-  </div>
-  <div class="row mb-3" id='IngredientBoxesGroup'>
-    <div class="col col-md-2 form-floating" id="TextBoxDiv1">
-        <input type="text" class="form-control" placeholder="Leave a comment here" id="floatinginput" class="px-2" name="floatinginput[]"></input>
-        <label for="floatinginput" class="">Ingredient 1</label>
-    </div>
-  </div> <!-- End of the ingredients section -->
+    
+        <div class="row"> <!--Ingredients section-->
+            <div class="col col-md-2 mb-3">
+                <button id='addIngredient' class="btn btn-success">Add</button>
+                <button id='removeIngredient' class="btn btn-danger">Remove</button>
+            </div>
+        </div>
+    <form action="{{  url_for('submit')  }}">
+        <div class="row mb-3" id='IngredientBoxesGroup'>
+            <div class="row col-md-2 form-floating" id="TextBoxDiv1">
+                <input type="text" class="form-control" placeholder="Leave a comment here" id="floatinginput" class="" name="floatinginput[]"></input>
+                <label for="floatinginput" class="m-2">Ingredient 1</label>
+            </div>
+        </div> <!-- End of the ingredients section -->
 
+        <input type="submit" name="Submit">
+    </form>
 {% endblock %}
