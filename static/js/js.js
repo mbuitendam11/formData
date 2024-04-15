@@ -1,16 +1,38 @@
+ // Ingredient section Recipe Form
 
-function priorityLevel() {
-    let priority = document.getElementById("priority");
-    if (priority == "1") {
-        return priority.innerHTML = "Urgent";
-    } else if (priority == "2") {
-        return priority.innerHTML = "High";
-    } else if (priority == "3") {
-        return priority.innerHTML = "Medium";
-    } else if (priority == "4") {
-        return priority.innerHTML = "Low";
-    } else {
-        return priority.innerHTML = "Something went wrong!";
-    }
-}
-
+ var ingredientCounter = 2;
+		
+ $("#addIngredient").click(function () {
+             
+     if(ingredientCounter>10){
+             alert("Only 10 textboxes allow");
+             return false;
+     }   
+         
+     var newTextBoxDiv = $(document.createElement('div'))
+         .attr("id", 'TextBoxDiv' + ingredientCounter)
+         .attr("class", 'col col-md-2 form-floating');
+                 
+     newTextBoxDiv.after().html(
+        '<input type="email" class="form-control" \
+        placeholder="floatinginput" id="floatinginput" \
+        name="floatinginput[]" class="px-2"> \
+        </input><label for="floatinginput" class="">Ingredient ' + ingredientCounter + '</label>');
+             
+     newTextBoxDiv.appendTo("#IngredientBoxesGroup");
+ 
+                 
+     ingredientCounter++;
+ });
+ 
+ $("#removeIngredient").click(function () {
+     if(ingredientCounter==2){
+         alert("You cannot remove any more ingredients.");
+         return false;
+     }   
+         
+     ingredientCounter--;
+             
+         $("#TextBoxDiv" + ingredientCounter).remove();
+             
+ });
