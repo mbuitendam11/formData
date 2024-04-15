@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Form{% endblock %}
+
+
+{% block content %}
+<div class="row"> <!--Ingredients section-->
+    <div class="col col-md-2 mb-3">
+        <button id='addIngredient' class="btn btn-success">Add</button>
+        <button id='removeIngredient' class="btn btn-danger">Remove</button>
+    </div>
+  </div>
+  <div class="row mb-3" id='IngredientBoxesGroup'>
+    <div class="col col-md-2 form-floating" id="TextBoxDiv1">
+        <input type="text" class="form-control" placeholder="Leave a comment here" id="floatinginput" class="px-2" name="floatinginput[]"></input>
+        <label for="floatinginput" class="">Ingredient 1</label>
+    </div>
+  </div> <!-- End of the ingredients section -->
+
+{% endblock %}
